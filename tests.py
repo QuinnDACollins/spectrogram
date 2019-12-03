@@ -7,8 +7,15 @@ Created on Thu Nov 21 21:12:09 2019
 from scipy.io.wavfile import read
 from spectrogram import Spectrogram
 
-fs, signal = read("imissyou.wav")
-window_size = int(fs * .02)
-spec = Spectrogram(window_size, signal, 0.1)
+musFs, musSignal = read("imissyou.wav")
+mus_window_size = int(musFs * .02)
+musicSpec = Spectrogram(mus_window_size, musSignal, 1.0)
 
-spec.plot_spectrogram()
+
+speechFs, speechSignal = read("footmass.wav")
+speech_window_size = int(speechFs * .02)
+speechSpec = Spectrogram(speech_window_size, speechSignal, 1.0)
+
+musicSpec.plot_spectrogram()
+speechSpec.plot_spectrogram()
+

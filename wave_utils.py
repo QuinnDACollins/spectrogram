@@ -4,6 +4,8 @@ Created on Sat Nov 16 19:39:53 2019
 
 @author: Quinn Collins
 """
+
+
 from scipy.io.wavfile import read
 import numpy as np
 import matplotlib.pyplot as plt
